@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+	int main() {
+	int iPhoneCost=40000, Savings=5000, MonthlyIncome=4000, MonthsTotal=1, CreditedAmount=35000;
+	double CreditPercentage=0.03, MonthlyCredit, TotalPrice, TotalCredit=0, SummLeft, MonthlyPayment, MonthlyTotalPayment;
+	
+	do  { 
+		MonthlyCredit = CreditedAmount * CreditPercentage;
+		MonthlyPayment = MonthlyIncome - MonthlyCredit;
+		MonthlyTotalPayment = MonthlyCredit + MonthlyPayment;
+		SummLeft = CreditedAmount - MonthlyTotalPayment;
+		TotalCredit += MonthlyCredit;
+		CreditedAmount = SummLeft;
+		MonthsTotal ++;
+
+		
+	} while (SummLeft > MonthlyTotalPayment);
+	
+	TotalPrice = iPhoneCost + TotalCredit;
+	cout << "Total Price = " << TotalPrice << "\n";
+	cout << "Total Credit = " << TotalCredit << "\n";
+	cout << "Months Total = " << MonthsTotal << "\n";	
+	
+	
+
+	return 0;
+}
